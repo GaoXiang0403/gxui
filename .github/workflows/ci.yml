@@ -9,6 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      pages: write
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -16,7 +20,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "18" # 选择适合你的项目的 Node.js 版本
+          node-version: "16"
 
       - name: Install pnpm
         run: npm install -g pnpm
@@ -30,4 +34,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          publish_dir: ./dist # 指向你的 Nuxt 项目构建输出目录
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
