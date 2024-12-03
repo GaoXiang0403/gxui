@@ -1,0 +1,24 @@
+@use "./theme" as *;
+@use "./layout" as *;
+
+* {
+  @apply p-0 m-0 box-border;
+}
+
+p,
+img {
+  @apply select-none;
+}
+
+#__nuxt {
+  @apply relative flex flex-col min-h-screen;
+
+  @include useTheme {
+    background-color: getTheme("primary");
+  }
+}
+
+::view-transition-new(root),
+::view-transition-old(root) {
+  @apply animate-none;
+}

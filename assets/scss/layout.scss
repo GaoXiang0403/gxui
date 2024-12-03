@@ -1,0 +1,37 @@
+@use "sass:meta";
+@use "sass:map";
+@use "sass:list";
+
+$breakpoints: (
+  mobile: (
+    320px,
+    480px,
+  ),
+  tablet: (
+    481px,
+    768px,
+  ),
+  notebook: (
+    769px,
+    1024px,
+  ),
+  desktop: 1025px,
+);
+
+@mixin respond-to($breakpoint) {
+  $bp: map.get(
+    $map: $breakpoints,
+    $key: $breakpoint,
+  );
+  @if meta.type-of($bp) == "list" {
+    $min: list.nth($bp, 1);
+    $max: list.nth($bp, 2);
+    @media only screen and (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @media only screen and (min-width: $bp) {
+      @content;
+    }
+  }
+}
