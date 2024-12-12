@@ -1,8 +1,49 @@
 @use "./theme" as *;
 @use "./layout" as *;
 
+@use "./component.scss";
+
 * {
-  @apply p-0 m-0 box-border;
+  @apply p-0 m-0;
+}
+
+body {
+  font-family: var(--gx-font-family);
+  font-size: var(--gx-font-size-base);
+  color: getTheme("text");
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --webkit-tap-highlight-color: transparent;
+}
+
+@for $i from 1 through 6 {
+  $hSize: 6;
+  h#{$i} {
+    color: var(--gx-text-color-regular);
+
+    @if $hSize > 0 {
+      font-size: calc(var(--gx-font-size-base) * #{$hSize});
+    }
+    $hSize: $hSize - 2;
+  }
+}
+
+a {
+  @apply no-underline;
+  color: getTheme("primary");
+
+  &:hover,
+  &:focus {
+    color: var(--gx-color-primary-light-3);
+  }
+
+  &:active {
+    color: var(--gx-color-primary-dark-2);
+  }
+}
+
+p {
+  line-height: 1.8;
 }
 
 p,
@@ -14,7 +55,7 @@ img {
   @apply relative flex flex-col min-h-screen;
 
   @include useTheme {
-    background-color: getTheme("primary");
+    background-color: getTheme("bgColor");
   }
 }
 

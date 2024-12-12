@@ -1,0 +1,137 @@
+:root {
+  --gx-color-white: #ffffff;
+  --gx-color-black: #000000;
+  --gx-color-primary-rgb: 64, 158, 255;
+  --gx-color-success-rgb: 103, 194, 58;
+  --gx-color-warning-rgb: 230, 162, 60;
+  --gx-color-danger-rgb: 245, 108, 108;
+  --gx-color-error-rgb: 245, 108, 108;
+  --gx-color-info-rgb: 144, 147, 153;
+  --gx-font-size-extra-large: 20px;
+  --gx-font-size-large: 18px;
+  --gx-font-size-medium: 16px;
+  --gx-font-size-base: 14px;
+  --gx-font-size-small: 13px;
+  --gx-font-size-extra-small: 12px;
+  --gx-font-family: "Helvetica Neue", Helvetica, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  --gx-font-weight-primary: 500;
+  --gx-font-line-height-primary: 24px;
+  --gx-index-normal: 1;
+  --gx-index-top: 1000;
+  --gx-index-popper: 2000;
+  --gx-border-radius-base: 4px;
+  --gx-border-radius-small: 2px;
+  --gx-border-radius-round: 20px;
+  --gx-border-radius-circle: 100%;
+  --gx-transition-duration: 0.3s;
+  --gx-transition-duration-fast: 0.2s;
+  --gx-transition-function-ease-in-out-bezier: cubic-bezier(
+    0.645,
+    0.045,
+    0.355,
+    1
+  );
+  --gx-transition-function-fast-bezier: cubic-bezier(0.23, 1, 0.32, 1);
+  --gx-transition-all: all var(--gx-transition-duration)
+    var(--gx-transition-function-ease-in-out-bezier);
+  --gx-transition-fade: opacity var(--gx-transition-duration)
+    var(--gx-transition-function-fast-bezier);
+  --gx-transition-md-fade: transform var(--gx-transition-duration)
+      var(--gx-transition-function-fast-bezier),
+    opacity var(--gx-transition-duration)
+      var(--gx-transition-function-fast-bezier);
+  --gx-transition-fade-linear: opacity var(--gx-transition-duration-fast) linear;
+  --gx-transition-border: border-color var(--gx-transition-duration-fast)
+    var(--gx-transition-function-ease-in-out-bezier);
+  --gx-transition-box-shadow: box-shadow var(--gx-transition-duration-fast)
+    var(--gx-transition-function-ease-in-out-bezier);
+  --gx-transition-color: color var(--gx-transition-duration-fast)
+    var(--gx-transition-function-ease-in-out-bezier);
+  --gx-component-size-large: 40px;
+  --gx-component-size: 32px;
+  --gx-component-size-small: 24px;
+  --gx-color-primary: #409eff;
+  --gx-color-primary-light-3: rgb(121.3, 187.1, 255);
+  --gx-color-primary-light-5: rgb(159.5, 206.5, 255);
+  --gx-color-primary-light-7: rgb(197.7, 225.9, 255);
+  --gx-color-primary-light-8: rgb(216.8, 235.6, 255);
+  --gx-color-primary-light-9: rgb(235.9, 245.3, 255);
+  --gx-color-primary-dark-2: rgb(51.2, 126.4, 204);
+  --gx-color-success: #67c23a;
+  --gx-color-success-light-3: rgb(148.6, 212.3, 117.1);
+  --gx-color-success-light-5: rgb(179, 224.5, 156.5);
+  --gx-color-success-light-7: rgb(209.4, 236.7, 195.9);
+  --gx-color-success-light-8: rgb(224.6, 242.8, 215.6);
+  --gx-color-success-light-9: rgb(239.8, 248.9, 235.3);
+  --gx-color-success-dark-2: rgb(82.4, 155.2, 46.4);
+  --gx-color-warning: #e6a23c;
+  --gx-color-warning-light-3: rgb(237.5, 189.9, 118.5);
+  --gx-color-warning-light-5: rgb(242.5, 208.5, 157.5);
+  --gx-color-warning-light-7: rgb(247.5, 227.1, 196.5);
+  --gx-color-warning-light-8: rgb(250, 236.4, 216);
+  --gx-color-warning-light-9: rgb(252.5, 245.7, 235.5);
+  --gx-color-warning-dark-2: rgb(184, 129.6, 48);
+  --gx-color-danger: #f56c6c;
+  --gx-color-danger-light-3: rgb(248, 152.1, 152.1);
+  --gx-color-danger-light-5: rgb(250, 181.5, 181.5);
+  --gx-color-danger-light-7: rgb(252, 210.9, 210.9);
+  --gx-color-danger-light-8: rgb(253, 225.6, 225.6);
+  --gx-color-danger-light-9: rgb(254, 240.3, 240.3);
+  --gx-color-danger-dark-2: rgb(196, 86.4, 86.4);
+  --gx-color-error: #f56c6c;
+  --gx-color-error-light-3: rgb(248, 152.1, 152.1);
+  --gx-color-error-light-5: rgb(250, 181.5, 181.5);
+  --gx-color-error-light-7: rgb(252, 210.9, 210.9);
+  --gx-color-error-light-8: rgb(253, 225.6, 225.6);
+  --gx-color-error-light-9: rgb(254, 240.3, 240.3);
+  --gx-color-error-dark-2: rgb(196, 86.4, 86.4);
+  --gx-color-info: #909399;
+  --gx-color-info-light-3: rgb(177.3, 179.4, 183.6);
+  --gx-color-info-light-5: rgb(199.5, 201, 204);
+  --gx-color-info-light-7: rgb(221.7, 222.6, 224.4);
+  --gx-color-info-light-8: rgb(232.8, 233.4, 234.6);
+  --gx-color-info-light-9: rgb(243.9, 244.2, 244.8);
+  --gx-color-info-dark-2: rgb(115.2, 117.6, 122.4);
+  --gx-bg-color: #ffffff;
+  --gx-bg-color-page: #f2f3f5;
+  --gx-bg-color-overlay: #ffffff;
+  --gx-text-color-primary: #303133;
+  --gx-text-color-regular: #606266;
+  --gx-text-color-secondary: #909399;
+  --gx-text-color-placeholder: #a8abb2;
+  --gx-text-color-disabled: #c0c4cc;
+  --gx-border-color: #dcdfe6;
+  --gx-border-color-light: #e4e7ed;
+  --gx-border-color-lighter: #ebeef5;
+  --gx-border-color-extra-light: #f2f6fc;
+  --gx-border-color-dark: #d4d7de;
+  --gx-border-color-darker: #cdd0d6;
+  --gx-fill-color: #f0f2f5;
+  --gx-fill-color-light: #f5f7fa;
+  --gx-fill-color-lighter: #fafafa;
+  --gx-fill-color-extra-light: #fafcff;
+  --gx-fill-color-dark: #ebedf0;
+  --gx-fill-color-darker: #e6e8eb;
+  --gx-fill-color-blank: #ffffff;
+  --gx-box-shadow: 0px 12px 32px 4px rgba(0, 0, 0, 0.04),
+    0px 8px 20px rgba(0, 0, 0, 0.08);
+  --gx-box-shadow-light: 0px 0px 12px rgba(0, 0, 0, 0.12);
+  --gx-box-shadow-lighter: 0px 0px 6px rgba(0, 0, 0, 0.12);
+  --gx-box-shadow-dark: 0px 16px 48px 16px rgba(0, 0, 0, 0.08),
+    0px 12px 32px rgba(0, 0, 0, 0.12), 0px 8px 16px -8px rgba(0, 0, 0, 0.16);
+  --gx-disabled-bg-color: var(--gx-fill-color-light);
+  --gx-disabled-text-color: var(--gx-text-color-placeholder);
+  --gx-disabled-border-color: var(--gx-border-color-light);
+  --gx-overlay-color: rgba(0, 0, 0, 0.8);
+  --gx-overlay-color-light: rgba(0, 0, 0, 0.7);
+  --gx-overlay-color-lighter: rgba(0, 0, 0, 0.5);
+  --gx-mask-color: rgba(255, 255, 255, 0.9);
+  --gx-mask-color-extra-light: rgba(255, 255, 255, 0.3);
+  --gx-border-width: 1px;
+  --gx-border-style: solid;
+  --gx-border-color-hover: var(--gx-text-color-disabled);
+  --gx-border: var(--gx-border-width) var(--gx-border-style)
+    var(--gx-border-color);
+  --gx-svg-monochrome-grey: var(--gx-border-color);
+}

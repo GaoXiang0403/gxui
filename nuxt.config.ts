@@ -2,7 +2,7 @@
  * @Author: xiang.gao 57524479+GaoXiang0403@users.noreply.github.com
  * @Date: 2024-11-21 00:44:22
  * @LastEditors: xiang.gao 57524479+GaoXiang0403@users.noreply.github.com
- * @LastEditTime: 2024-12-03 21:46:32
+ * @LastEditTime: 2024-12-04 15:01:54
  * @FilePath: /gxdemo/nuxt.config.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -14,7 +14,6 @@ export default defineNuxtConfig({
   },
   css: ["~/assets/scss/common.scss"],
   app: {
-    baseURL: "/gxui/",
     head: {
       titleTemplate: "%s %separator %siteName",
       templateParams: {
@@ -25,10 +24,12 @@ export default defineNuxtConfig({
         { name: "description", content: "My amazing Nuxt 3 app" },
         { name: "keywords", content: "nuxt,vue,seo" },
         { property: "og:title", content: "%s %separator %siteName" },
-        { property: "og:description", content: "My amazing Nuxt 3 app" },
+        { property: "og:description", content: "%description" },
       ],
 
-      link: [{ rel: "canonical", href: "https://example.com/page" }],
+      link: [
+        { rel: "canonical", href: "https://gaoxiang0403.github.io/gxui/" },
+      ],
     },
   },
   appConfig: {

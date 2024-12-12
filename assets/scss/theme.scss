@@ -1,11 +1,28 @@
 @use "sass:map";
+@use "sass:meta";
+@use "sass:string";
+@use "sass:list";
 
 $themes: (
   light: (
-    primary: #007fff,
+    primary: (
+      default: var(--gx-color-primary),
+      light3: var(--gx-color-primary-light-3),
+    ),
+    text: var(--gx-text-color-primary),
+    bgColor: (
+      default: var(--gx-bg-color-page),
+    ),
   ),
   dark: (
-    primary: #fff000,
+    primary: (
+      default: var(--gx-color-white),
+      light3: #ff0fff,
+    ),
+    text: #fff,
+    bgColor: (
+      default: var(--gx-bg-color),
+    ),
   ),
 );
 
@@ -13,9 +30,9 @@ $curTheme: light;
 
 @mixin useTheme() {
   @each $key, $value in $themes {
+    $curTheme: $key !global;
     @if $key == $curTheme {
-      $curTheme: $key !global;
-      @at-root html.#{$key} {
+      @at-root html.#{$key} & {
         @content;
       }
     }
@@ -24,5 +41,26 @@ $curTheme: light;
 
 @function getTheme($key) {
   $themeMap: map.get($themes, $curTheme);
-  @return map.get($themeMap, $key);
+
+  $keys: string.split($key, ".");
+  $length: list.length($keys);
+  @if $length == 1 {
+    $currentMap: map.get($themeMap, $key);
+    @if $currentMap != null {
+      @if meta.type-of($currentMap) == "map" {
+        $currentMap: map.get($currentMap, "default");
+      }
+    }
+    @return $currentMap;
+  } @else {
+    $value: $themeMap;
+    @for $i from 1 through $length {
+      @if $value == null {
+        $value: null;
+      } @else {
+        $value: map.get($value, list.nth($keys, $i));
+      }
+    }
+    @return $value;
+  }
 }
